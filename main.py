@@ -1,12 +1,11 @@
 import math
 import sys
 
+
 # calculate principal amount using formula P = A / (i*(1+i)^n/((1+i)^n-1))
 # where A is annuity payment
 # i is nominal interest
 # n is number of payments
-
-
 def calculate_principal(A, i, n):
     den = (i * pow(1 + i, n)) / (pow(1 + i, n) - 1)
     P = A / den
@@ -26,12 +25,11 @@ def calculate_annuity(n, i, P):
     print(f"Your annuity payment = {A}!")
     print(f"Overpayment = {math.ceil(overpayment)}")
 
+
 # calculate no of payments using formula n = log1+i(A/(A-(i*p)))
 # where A is annuity payment
 # i is nominal interest
 # p is loan principal
-
-
 def calculate_months(P, A, i):
     n = math.log(A / (A - i * P), 1 + i)
     n = math.ceil(n)
